@@ -16,31 +16,21 @@ use Symfony\Component\Form\FormBuilderInterface;
  * @method \Spryker\Zed\StoreContextGui\StoreContextGuiConfig getConfig()
  * @method \Spryker\Zed\StoreContextGui\Communication\StoreContextGuiCommunicationFactory getFactory()
  */
-class TimezoneStoreFormExpanderPlugin extends AbstractPlugin implements StoreFormExpanderPluginInterface
+class ContextStoreFormExpanderPlugin extends AbstractPlugin implements StoreFormExpanderPluginInterface
 {
     /**
      * {@inheritDoc}
+     * - Expands store form with store context.
      *
      * @api
      *
-     * @param \Symfony\Component\Form\FormBuilderInterface<string, \Symfony\Component\Form\FormBuilderInterface> $builder
+     * @param \Symfony\Component\Form\FormBuilderInterface $builder
      * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
      *
-     * @return \Symfony\Component\Form\FormBuilderInterface<string, \Symfony\Component\Form\FormBuilderInterface>
+     * @return \Symfony\Component\Form\FormBuilderInterface
      */
     public function expand(FormBuilderInterface $builder, StoreTransfer $storeTransfer): FormBuilderInterface
     {
-        $formType = $this->getFactory()
-            ->createStoreTimezoneForm();
-
-        $dataProvider = $this->getFactory()
-            ->createStoreTimezoneFormDataProvider();
-
-        $formType->buildForm(
-            $builder,
-            $dataProvider->getOptions(),
-        );
-
-        return $builder;
+        return $this->getFactory()->createStoreContextFormExpander()->expand($builder, $storeTransfer);
     }
 }

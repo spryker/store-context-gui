@@ -5,18 +5,12 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\StoreContextGui\Communication\Plugin\StoreGui;
+namespace Spryker\Zed\StoreContextGui\Communication\Expander;
 
 use Generated\Shared\Transfer\TabItemTransfer;
 use Generated\Shared\Transfer\TabsViewTransfer;
-use Spryker\Zed\Kernel\Communication\AbstractPlugin;
-use Spryker\Zed\StoreGuiExtension\Dependency\Plugin\StoreFormTabExpanderPluginInterface;
 
-/**
- * @method \Spryker\Zed\StoreContextGui\StoreContextGuiConfig getConfig()
- * @method \Spryker\Zed\StoreContextGui\Communication\StoreContextGuiCommunicationFactory getFactory()
- */
-class StoreContextStoreFormTabExpanderPlugin extends AbstractPlugin implements StoreFormTabExpanderPluginInterface
+class StoreContextTabExpander implements StoreContextTabExpanderInterface
 {
     /**
      * @var string
@@ -26,23 +20,19 @@ class StoreContextStoreFormTabExpanderPlugin extends AbstractPlugin implements S
     /**
      * @var string
      */
-    protected const STORE_CONTEXT_TAB_TITLE = 'Store Context';
+    protected const STORE_CONTEXT_TAB_TITLE = 'Context';
 
     /**
      * @var string
      */
-    protected const STORE_CONTEXT_TAB_TEMPLATE = '@StoreContextGui/_partials/_tabs/store-context.twig';
+    protected const STORE_CONTEXT_TAB_TEMPLATE = '@StoreContextGui/_partials/store-context-tab.twig';
 
     /**
-     * {@inheritDoc}
-     *
-     * @api
-     *
      * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
      *
      * @return \Generated\Shared\Transfer\TabsViewTransfer
      */
-    public function expand(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
+    public function expandWithContextTab(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         $tabItemTransfer = (new TabItemTransfer())
             ->setName(static::STORE_CONTEXT_TAB_NAME)
