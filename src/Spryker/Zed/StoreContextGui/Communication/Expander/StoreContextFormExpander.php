@@ -24,21 +24,12 @@ class StoreContextFormExpander implements StoreContextFormExpanderInterface
      */
     protected StoreContextFormDataProvider $storeContextFormDataProvider;
 
-    /**
-     * @param \Spryker\Zed\StoreContextGui\Communication\Form\DataProvider\StoreContextFormDataProvider $storeContextFormDataProvider
-     */
     public function __construct(
         StoreContextFormDataProvider $storeContextFormDataProvider
     ) {
         $this->storeContextFormDataProvider = $storeContextFormDataProvider;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Symfony\Component\Form\FormBuilderInterface
-     */
     public function expand(FormBuilderInterface $builder, StoreTransfer $storeTransfer): FormBuilderInterface
     {
         $builder->add(

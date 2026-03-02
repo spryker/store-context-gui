@@ -24,17 +24,11 @@ use Symfony\Component\Form\DataTransformerInterface;
  */
 class StoreContextGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\StoreContextGui\Communication\Expander\StoreContextTabExpanderInterface
-     */
     public function createStoreContextTabExpander(): StoreContextTabExpanderInterface
     {
         return new StoreContextTabExpander();
     }
 
-    /**
-     * @return \Spryker\Zed\StoreContextGui\Communication\Form\DataProvider\StoreContextFormDataProvider
-     */
     public function createStoreContextFormDataProvider(): StoreContextFormDataProvider
     {
         return new StoreContextFormDataProvider(
@@ -42,9 +36,6 @@ class StoreContextGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\StoreContextGui\Communication\Expander\StoreContextFormExpanderInterface
-     */
     public function createStoreContextFormExpander(): StoreContextFormExpanderInterface
     {
         return new StoreContextFormExpander(
@@ -52,25 +43,16 @@ class StoreContextGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\StoreContextGui\Dependency\Facade\StoreContextGuiToStoreContextFacadeInterface
-     */
     public function getStoreContextFacade(): StoreContextGuiToStoreContextFacadeInterface
     {
         return $this->getProvidedDependency(StoreContextGuiDependencyProvider::FACADE_STORE_CONTEXT);
     }
 
-    /**
-     * @return \Symfony\Component\Form\DataTransformerInterface
-     */
     public function createStoreContextCollectionDataTransformer(): DataTransformerInterface
     {
         return new StoreContextCollectionDataTransformer();
     }
 
-    /**
-     * @return string
-     */
     public function getStoreContextFormClass(): string
     {
         return StoreContextForm::class;

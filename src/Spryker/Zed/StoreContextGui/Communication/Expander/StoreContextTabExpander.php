@@ -27,11 +27,6 @@ class StoreContextTabExpander implements StoreContextTabExpanderInterface
      */
     protected const STORE_CONTEXT_TAB_TEMPLATE = '@StoreContextGui/_partials/store-context-tab.twig';
 
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     public function expandWithContextTab(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer
     {
         $tabItemTransfer = (new TabItemTransfer())

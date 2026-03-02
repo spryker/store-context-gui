@@ -16,9 +16,6 @@ class StoreContextFormDataProvider
      */
     protected StoreContextGuiToStoreContextFacadeInterface $storeContextFacade;
 
-    /**
-     * @param \Spryker\Zed\StoreContextGui\Dependency\Facade\StoreContextGuiToStoreContextFacadeInterface $storeContextFacade
-     */
     public function __construct(StoreContextGuiToStoreContextFacadeInterface $storeContextFacade)
     {
         $this->storeContextFacade = $storeContextFacade;

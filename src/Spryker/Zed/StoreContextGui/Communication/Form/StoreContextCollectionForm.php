@@ -45,11 +45,6 @@ class StoreContextCollectionForm extends AbstractType
         $this->addStoreContextForm($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);

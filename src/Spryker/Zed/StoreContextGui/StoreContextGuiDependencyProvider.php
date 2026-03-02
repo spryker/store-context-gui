@@ -21,11 +21,6 @@ class StoreContextGuiDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const FACADE_STORE_CONTEXT = 'FACADE_STORE_CONTEXT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = parent::provideCommunicationLayerDependencies($container);
@@ -35,11 +30,6 @@ class StoreContextGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreContextFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE_CONTEXT, function (Container $container) {

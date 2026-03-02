@@ -100,11 +100,6 @@ class StoreContextForm extends AbstractType
      */
     protected const OPTION_COMPOUND = 'compound';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -122,9 +117,6 @@ class StoreContextForm extends AbstractType
         ]);
     }
 
-    /**
-     * @return string
-     */
     public function getBlockPrefix(): string
     {
         return 'store_context_set';

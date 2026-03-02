@@ -12,11 +12,5 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 interface StoreContextFormExpanderInterface
 {
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     * @param \Generated\Shared\Transfer\StoreTransfer $storeTransfer
-     *
-     * @return \Symfony\Component\Form\FormBuilderInterface
-     */
     public function expand(FormBuilderInterface $builder, StoreTransfer $storeTransfer): FormBuilderInterface;
 }

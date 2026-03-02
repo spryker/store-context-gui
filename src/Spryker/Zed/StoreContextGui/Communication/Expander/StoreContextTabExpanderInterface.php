@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\TabsViewTransfer;
 
 interface StoreContextTabExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\TabsViewTransfer $tabsViewTransfer
-     *
-     * @return \Generated\Shared\Transfer\TabsViewTransfer
-     */
     public function expandWithContextTab(TabsViewTransfer $tabsViewTransfer): TabsViewTransfer;
 }
