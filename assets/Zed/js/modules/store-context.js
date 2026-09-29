@@ -15,29 +15,6 @@ $(document).ready(function () {
         });
     }
 
-    function disableSelectedApplication() {
-        const $selectedContexts = $(storeContextItemSelector)
-            .find('.select-application')
-            .map(function () {
-                return $(this).val();
-            })
-            .get();
-
-        $(storeContextItemSelector)
-            .find('select')
-            .each(function () {
-                const $select = $(this);
-                $select.find('option').each(function () {
-                    const $option = $(this);
-                    if ($selectedContexts.includes($option.val())) {
-                        $option.prop('disabled', true);
-                    } else {
-                        $option.prop('disabled', false);
-                    }
-                });
-            });
-    }
-
     /**
      * @param event {Event}
      */
